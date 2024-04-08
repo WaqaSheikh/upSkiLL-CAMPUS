@@ -1,0 +1,39 @@
+def run_quiz(questions):
+    score = 0
+
+    for question, correct_answer in questions.items():
+        print(question)
+        user_answer = input("Enter your answer: ").strip().lower()
+
+        if user_answer == correct_answer.lower():
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Incorrect. The correct answer is: {correct_answer}")
+
+        print()  # Print a blank line for spacing
+
+    return score
+
+# Define your quiz questions here (question: correct_answer)
+quiz_questions = {
+    "What is the capital of Pakistan?\na)Islamabad \nb)Karachi \nc)Lahore \nd)Sialkot": "a",
+    "Which planet is known as the Red Planet?\na)Mercury \nb)Mars \nc)Jupyter \nd)Earth": "b",
+    "What is the largest mammal in the world?\na)Elephant \nb)Dinasour \nc)Blue Whale \nd)Dolphin": "c",
+    "What is the National Bird of Pakistan?\na)Peacock \nb)Myna \nc)Parrot \nd)Patrich": "d",
+    "What year did the Titanic sink?\na)1913 \nb)1910 \nc)1912 \nd)1915": "c
+    "
+}
+
+# Run the quiz
+print("Welcome to the Quiz Game!")
+print("Please answer the following questions:")
+
+user_score = run_quiz(quiz_questions)
+
+print("Quiz completed!")
+print(f"Your score: {user_score} out of {len(quiz_questions)}")
+
+# Calculate percentage score
+percentage_score = (user_score / len(quiz_questions)) * 100
+print(f"Percentage score: {percentage_score:.2f}%")
